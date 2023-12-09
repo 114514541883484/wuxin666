@@ -1,0 +1,255 @@
+--- Free Souce if you use anything give me credits thank you ---
+
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    wait(1)
+    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+ 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "幸运方块大乱斗汉化版";
+    Text = "😀"; -- what the text says (ofc)
+    Duration = 10;
+})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "多点点关注";
+    Text = "享用脚本吧"; -- what the text says (ofc)
+    Duration = 10;
+})
+
+local kavoUi = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local window = kavoUi.CreateLib("Lucky Block Battle Ground","BloodTheme")
+
+---Tabs
+
+local Tab1 = window:NewTab("首页")
+local Tab1Section = Tab1:NewSection("首页")
+local Tab2 = window:NewTab("开发&汉化")
+local Tab2Section = Tab2:NewSection("😀")
+local Tab2Section = Tab2:NewSection("企鹅832303968")
+
+---Buttons
+
+Tab1Section:NewButton("攻击体积","修改攻击体积",function()
+_G.HeadSize = 25
+_G.Disabled = true
+
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+end)
+
+Tab1Section:NewToggle("无限跳跃"," 我要飞的更高～",function()
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+end)
+
+Tab1Section:NewButton("速度","修改速度",function()
+function isNumber(str)
+  if tonumber(str) ~= nil or str == 'inf' then
+    return true
+  end
+end
+local tspeed = 1
+local hb = game:GetService("RunService").Heartbeat
+local tpwalking = true
+local player = game:GetService("Players")
+local lplr = player.LocalPlayer
+local chr = lplr.Character
+local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+while tpwalking and hb:Wait() and chr and hum and hum.Parent do
+  if hum.MoveDirection.Magnitude > 0 then
+    if tspeed and isNumber(tspeed) then
+      chr:TranslateBy(hum.MoveDirection * tonumber(tspeed))
+    else
+      chr:TranslateBy(hum.MoveDirection)
+    end
+  end
+end
+end)
+
+Tab1Section:NewButton("获得所有幸运方块 (可能出现问题)","Increase speed",function()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+end)
