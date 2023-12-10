@@ -32,7 +32,8 @@ Key:AddTextbox({
 })
 
 local keys = {
-  "imduck",
+  "XD雾新",
+  "wstm",
 
 }
 
@@ -53,7 +54,7 @@ game.StarterGui:SetCore("SendNotification", {
         Icon = nil;
         Duration = 5
       })
-loadstring(game:HttpGet("https://raw.githubusercontent.com/jxdjbx/e/main/%E5%BD%A2%E5%AE%B9%E7%9A%84"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/%E6%A8%A1%E5%9D%97.lua",true))()
       game.StarterGui:SetCore("SendNotification", {
         Title = "XCO工作室";
         Text = "解析成功啦";
