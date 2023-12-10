@@ -6,13 +6,13 @@ local Window = OrionLib:MakeWindow({Name = "雾新脚本", HidePremium = false, 
 OrionLib:MakeNotification({
     Name = "雾新",
     Content = "作者:静新/狗蛋",
-    Image = "rbxassetid://630235992",
+    Image = "rbxassetid://15594006561",
     Time = 6
 })
 
 local about = Window:MakeTab({
     Name = "静新/狗蛋制作",
-    Icon = "rbxassetid://4483345998",
+    Icon = "rbxassetid://15594006561",
     PremiumOnly = false
 })
 
@@ -22,7 +22,7 @@ about:AddParagraph("狗蛋跟我一起合作")
 
 local Tab = Window:MakeTab({
 	Name = "doors脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -35,7 +35,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "一路向西脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -48,7 +48,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "极速传奇脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -70,7 +70,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "伐木脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rrbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -83,7 +83,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "忍者脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -103,7 +103,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "幸运方块脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -116,7 +116,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "造船寻宝脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -129,7 +129,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "蜂群脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -142,7 +142,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "力量脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -155,7 +155,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "寻宝模拟器脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -168,7 +168,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "洗衣模拟器脚本",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
@@ -181,7 +181,7 @@ Tab:AddButton({
 
 local Tab = Window:MakeTab({
 	Name = "餐厅大亨2",
-	Icon = "rbxassetid://14503609101",
+	Icon = "rbxassetid://15594006561",
 	PremiumOnly = false
 })
 
