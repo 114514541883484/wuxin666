@@ -29,7 +29,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "doors",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin666/blob/main/doors%E8%84%9A%E6%9C%AC.txt",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/doors%E8%84%9A%E6%9C%AC.txt",true))()
   	end    
 })
 
@@ -42,7 +42,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "一路向西",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin666/blob/main/%E4%B8%80%E8%B7%AF%E5%90%91%E8%A5%BF.lua",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/%E4%B8%80%E8%B7%AF%E5%90%91%E8%A5%BF.lua",true))()
   	end    
 })
 
@@ -55,7 +55,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "极速传奇",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin666/blob/main/%E9%80%9F%E5%BA%A6%E4%BC%A0%E5%A5%87%E8%84%9A%E6%9C%AC.lua",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/%E8%9C%82%E7%BE%A4.lua",true))()
   	end    
 })
 
@@ -63,7 +63,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "极速传奇2",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin66/blob/main/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87.txt",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin66/main/%E6%9E%81%E9%80%9F%E4%BC%A0%E5%A5%87.txt",true))()
   	end    
 })
 
@@ -77,7 +77,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "伐木",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin666/blob/main/%E4%BC%90%E6%9C%A8.lua",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/%E4%BC%90%E6%9C%A8.lua",true))()
   	end    
 })
 
@@ -90,14 +90,14 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "忍者",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin666/blob/main/%E5%BF%8D%E8%80%85.lua",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/%E5%BF%8D%E8%80%85.lua",true))()
   	end    
 })
 
 Tab:AddButton({
 	Name = "忍者2",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin66/blob/main/%E5%BF%8D%E8%80%85%E4%BC%A0%E5%A5%87.txt",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin66/main/%E5%BF%8D%E8%80%85%E4%BC%A0%E5%A5%87.txt",true))()
   	end    
 })
 
@@ -110,7 +110,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "幸运方块",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin666/blob/main/%E5%B9%B8%E8%BF%90%E6%96%B9%E5%9D%97.lua",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/%E5%B9%B8%E8%BF%90%E6%96%B9%E5%9D%97.lua",true))()
   	end    
 })
 
@@ -123,7 +123,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "造船寻宝",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin666/blob/main/%E9%80%A0%E8%88%B9%E5%AF%BB%E5%AE%9D.lua",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/%E9%A4%90%E5%8E%85%E5%A4%A7%E4%BA%A82.lua",true))()
   	end    
 })
 
@@ -136,7 +136,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "蜂群",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin666/blob/main/%E8%9C%82%E7%BE%A4.lua",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/%E8%9C%82%E7%BE%A4.lua",true))()
   	end    
 })
 
@@ -149,7 +149,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "力量",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin66/blob/main/%E5%8A%9B%E9%87%8F%E4%BC%A0%E5%A5%87.txt",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin66/main/%E5%8A%9B%E9%87%8F%E4%BC%A0%E5%A5%87.txt",true))()
   	end    
 })
 
@@ -162,7 +162,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "寻宝模拟器",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin66/blob/main/%E5%AF%BB%E5%AE%9D%E6%A8%A1%E6%8B%9F%E5%99%A8.txt",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin66/main/%E5%AF%BB%E5%AE%9D%E6%A8%A1%E6%8B%9F%E5%99%A8.txt",true))()
   	end    
 })
 
@@ -175,6 +175,19 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "洗衣",
 	Callback = function()
-      	loadstring(game:HttpGet("https://github.com/114514541883484/wuxin66/blob/main/%E6%B4%97%E8%A1%A3.txt",true))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin66/main/%E6%B4%97%E8%A1%A3.txt",true))()
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "餐厅大亨2",
+	Icon = "rbxassetid://14503609101",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "洗衣",
+	Callback = function()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/%E9%A4%90%E5%8E%85%E5%A4%A7%E4%BA%A82.lua",true))()
   	end    
 })
