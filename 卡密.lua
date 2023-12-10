@@ -14,7 +14,7 @@ end
 
 local Key = Window:MakeTab({
   Name = "密钥",
-  Icon = "rbxassetid://8610328800",
+  Icon = "rbxassetid://15594006561",
   PremiumOnly = false
 })
 
