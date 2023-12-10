@@ -186,7 +186,7 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-	Name = "洗衣",
+	Name = "餐厅",
 	Callback = function()
       	loadstring(game:HttpGet("https://raw.githubusercontent.com/114514541883484/wuxin666/main/%E9%A4%90%E5%8E%85%E5%A4%A7%E4%BA%A82.lua",true))()
   	end    
