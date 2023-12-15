@@ -1,0 +1,180 @@
+Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nahida-cn/Roblox/main/UI.lua"))()
+ 
+Window = Library:Window("SH", "彩虹朋友")
+ 
+Player = Window:Tab("玩家")
+ 
+Player:Slider("移动速度", 0, 500, game.Players.LocalPlayer.Character.Humanoid.WalkSpeed, function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+end)
+ 
+Player:Button("飞行", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/nahida-cn/Roblox/main/Fly.lua"))()
+end)
+ 
+Player:Toggle("穿墙", false, function(Value)
+    Noclip = Value
+    if not Noclip then
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+    end
+end)
+ 
+Player:Toggle("隐身", false, function(Value)
+    Invisible = Value
+    if not Invisible then
+        game.ReplicatedStorage.communication.boxes.cl.BoxUpdated:FireServer("Unequip")
+    end
+end)
+ 
+Auto = Window:Tab("自动")
+ 
+Auto:Toggle("收集", false, function(Value)
+    Get = Value
+end)
+ 
+Auto:Toggle("放置", false, function(Value)
+    Put = Value
+end)
+ 
+Loop = Window:Tab("循环")
+ 
+Loop:Textbox("用户名", true, function(Value)
+    User = Value
+end)
+ 
+Loop:Toggle("传送", false, function(Value)
+    LT = Value
+    game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled("Seated", not LT)
+end)
+ 
+ESP = Window:Tab("透视")
+ 
+ESP:Toggle("玩家", false, function(Value)
+    EP = Value
+end)
+ 
+ESP:Toggle("其他", false, function(Value)
+    EO = Value
+end)
+ 
+Other = Window:Tab("其他")
+ 
+Other:Button("建筑工具", function()
+    for i = 3, 4 do
+        HB = Instance.new("HopperBin", game.Players.LocalPlayer.Backpack)
+        HB.BinType = i
+    end
+end)
+ 
+Other:Button("点击传送", function()
+    Tool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+    Tool.RequiresHandle = false
+    Tool.Activated:Connect(function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer:GetMouse().Hit+Vector3.new(0, 2.5, 0)
+    end)
+end)
+ 
+Other:Toggle("夜视", false, function(Value)
+    Light = Value
+    if Light then
+        game.Lighting.Ambient = Color3.new(1, 1, 1)
+    else
+        game.Lighting.Ambient = Color3.new(0, 0, 0)
+    end
+end)
+ 
+About = Window:Tab("关于")
+ 
+About:Label("作者：纳西妲 二改：雾新")
+ 
+About:Button("复制群聊链接", function()
+    setclipboard("http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=7uzCscusQdIUR246UfEUgvYRQgqMvY8X&authKey=JsLdw8EvfQKT%2FULdN3kAeG4rLKwXf3dzYkpm%2FwpI7sfS5IcagoxmWN5WJyIZAOeR&noverify=0&group_code=109753441")
+end)
+ 
+game.RunService.Stepped:Connect(function()
+    if Noclip then
+        for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = false
+            end
+        end
+    end
+end)
+ 
+game.RunService.Stepped:Connect(function()
+    if Invisible then
+        game.ReplicatedStorage.communication.boxes.cl.BoxUpdated:FireServer("Equip")
+    end
+end)
+ 
+game.RunService.Stepped:Connect(function()
+    if Get then
+        Model = {
+            "Block"..math.random(1, 24),
+            "FoodOrange",
+            "FoodPink",
+            "FoodGreen",
+            "Fuse"..math.random(1, 14),
+            "Battery",
+            "LightBulb",
+            "GasCanister",
+            "CakeMix"
+        }
+        for i, v in pairs(game.Workspace:GetChildren()) do
+            if table.find(Model, v.Name) then
+                v.TouchTrigger.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            end
+        end
+    end
+end)
+ 
+game.RunService.Stepped:Connect(function()
+    if Put then
+        for i, v in pairs(game.Workspace.GroupBuildStructures:GetChildren()) do
+            v.Trigger.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        end
+    end
+end)
+ 
+game.RunService.Stepped:Connect(function()
+    if LT then
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if string.find(v.Name, User) then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+            end
+        end
+    end
+end)
+ 
+game.RunService.Stepped:Connect(function()
+    for i, v in pairs(game.Players:GetPlayers()) do
+        if not v.Character:FindFirstChild("Highlight") then
+            Instance.new("Highlight", v.Character)
+            BG = Instance.new("BillboardGui", v.Character)
+            TL = Instance.new("TextLabel", BG)
+            BG.AlwaysOnTop = true
+            BG.Size = UDim2.new(0, 100, 0, 50)
+            BG.StudsOffset = Vector3.new(0, 4, 0)
+            TL.BackgroundTransparency = 1
+            TL.Size = UDim2.new(0, 100, 0, 50)
+        end
+        v.Character.BillboardGui.TextLabel.Text = v.Name.."\nHealth: "..math.round(v.Character.Humanoid.Health).."\nDistance: "..math.round((v.Character.HumanoidRootPart.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude)
+        v.Character.BillboardGui.TextLabel.TextColor = v.TeamColor
+        v.Character.BillboardGui.Enabled = EP
+        v.Character.Highlight.Enabled = EP
+    end
+end)
+ 
+game.RunService.Stepped:Connect(function()
+    for i, v in pairs(game.Workspace.ignore:GetChildren()) do
+        if v.Name == "Looky" then
+            v.Highlight.Enabled = EO
+        end
+    end
+end)
+ 
+game.Lighting.LightingChanged:Connect(function()
+    if Light then
+        game.Lighting.Ambient = Color3.new(1, 1, 1)
+    end
+end)
