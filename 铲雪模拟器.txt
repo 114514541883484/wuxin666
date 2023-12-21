@@ -1,0 +1,68 @@
+--狗蛋第一
+print("Welcome to Zeus")print("Welcome to Zeus")print("Welcome to Zeus")local OrionLib = loadstring(game:HttpGet("https://pastebin.com/raw/jrdKakD6"))()
+
+local CoreGui = game:GetService("StarterGui")CoreGui:SetCore("SendNotification", {    Title = "雾新",    Text = "耐心等待（反挂机已开启）",    Duration = 5, })print("反挂机开启")		local vu = game:GetService("VirtualUser")		game:GetService("Players").LocalPlayer.Idled:connect(function()		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		   wait(1)		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		end)
+local Window = OrionLib:MakeWindow({Name = "雾新制作的铲雪模拟器", HidePremium = false, SaveConfig = false, IntroText = "注入器："..identifyexecutor(), ConfigFolder = "雾新脚本"})
+
+local Tab = Window:MakeTab({
+	Name = "传送",
+	Icon = "rbxassetid://15660171999",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+  Name = "传送出售雪的地方",
+  Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =CFrame.new(530.6400756835938, 15.846258163452148, -71.97457885742188)
+
+
+  	end
+})
+
+Tab:AddButton({
+  Name = "传送买车的地方",
+  Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =CFrame.new(82.81130981445312, 16.051803588867188, -143.3499755859375)
+
+
+  	end
+})
+
+Tab:AddButton({
+  Name = "传送买工具的地方",
+  Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =CFrame.new(130.06105041503906, 16.397016525268555, -14.94937801361084)
+
+
+  	end
+})
+
+Tab:AddButton({
+  Name = "传送买背包的地方",
+  Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =CFrame.new(349.2950744628906, 17.031166076660156, -16.516765594482422)
+
+
+  	end
+})
+
+Tab:AddButton({
+  Name = "传送买假日礼物的地方",
+  Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =CFrame.new(154.74337768554688, 16.20853042602539, 146.49472045898438)
+
+
+  	end
+})
+
+Tab:AddButton({
+  Name = "传送买宠物的地方",
+  Callback = function()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =CFrame.new(138.18580627441406, 17.7442569732666, 280.058837890625)
+
+
+  	end
+})
+
+
+OrionLib:Init()
