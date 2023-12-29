@@ -65,15 +65,20 @@ autoCrystal = Value
 		end
 end)
 
-local Tab3 = Window:Tab("自动")
+local Tab3 = Window:Tab("自动抽蛋")
 
-Tab3:Toggle("自动钻石", false, function(Value)
-autoCrystal = Value
-		while autoCrystal do
-			game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Gem", "City")
-			wait()
-		end
+Tab3:Dropdown("挑选宠物水晶","Yellow Crystal",{"Yellow Crystal", "Blue Crystal", "Red Crystal", "Lightning Crystal", "Inferno Crystal", "Lava Crystal", "Snow Crystal", "Electro Legends Crystal", "Space Crystal", "Alien Crystal", "Electro Crystal", "Desert Crystal"},function(Value)
+	getgenv().Egg = Value
 end)
-
-
-
+    
+Tab1=3:Toggle("自动抽宠物", false, function(Value)
+function Egg()
+                while getgenv().AutoEgg == true do
+                    game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer("openCrystal", getgenv().Egg)
+                    wait()
+                end
+            end
+            
+            getgenv().AutoEgg = Value
+            Egg()
+	end)
