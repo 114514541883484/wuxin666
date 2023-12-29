@@ -1,0 +1,79 @@
+Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nahida-cn/Roblox/main/UI.lua"))()
+
+local Window = Library:Window("光武", "极速传奇")  
+
+local Tab1 = Window:Tab("传送")
+
+Tab1:Button("城市", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-537.8, 4.2, 386.2)
+end)
+
+Tab1:Button("白雪城", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-866.4, 4.2, 2165.7)
+end)
+
+Tab1:Button("溶岩城", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1616.8, 4.3, 4330.7)
+end)
+Tab1:Button("传奇公路", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3678.6, 71.7, 5592.4)
+end)
+
+local Tab2 = Window:Tab("自动")
+
+
+autoXP = false
+
+Tab2:Toggle("自动经验", false, function(Value)
+autoXP = Value
+		while autoXP do
+			game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Orange Orb", "City")
+			wait()
+		end
+end)
+
+autoHoop = false
+
+Tab2:Toggle("自动跳圈", false, function(Value)
+autoHoop = Value
+		spawn(function()
+			while autoHoop do
+				for i, v in pairs(game:GetService("Workspace").Hoops:GetChildren()) do
+					firetouchinterest(v, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 0)
+					wait()
+					firetouchinterest(v, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 1)
+				end
+			end
+		end)  
+end)
+
+autoRebirth = false
+
+Tab2:Toggle("自动重生", false, function(Value)
+autoRebirth = Value
+		while autoRebirth do
+			game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
+			wait(10)
+		end
+end)
+
+Tab2:Toggle("自动钻石", false, function(Value)
+autoCrystal = Value
+		while autoCrystal do
+			game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Gem", "City")
+			wait()
+		end
+end)
+
+local Tab3 = Window:Tab("自动")
+
+Tab3:Toggle("自动钻石", false, function(Value)
+autoCrystal = Value
+		while autoCrystal do
+			game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Gem", "City")
+			wait()
+		end
+end)
+
+
+
