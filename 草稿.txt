@@ -71,7 +71,7 @@ Tab3:Dropdown("挑选宠物水晶","Yellow Crystal",{"Yellow Crystal", "Blue Cry
 	getgenv().Egg = Value
 end)
     
-Tab1=3:Toggle("自动抽宠物", false, function(Value)
+Tab3:Toggle("自动抽宠物", false, function(Value)
 function Egg()
                 while getgenv().AutoEgg == true do
                     game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer("openCrystal", getgenv().Egg)
