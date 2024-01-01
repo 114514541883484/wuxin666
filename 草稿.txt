@@ -1,84 +1,133 @@
 Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nahida-cn/Roblox/main/UI.lua"))()
 
-local Window = Library:Window("光武", "极速传奇")  
+local Window = Library:Window("光武", "力量传奇")  
 
+local Tab1 = Window:Tab("主要")
+
+noCD = false
+punchCooldown = 0.35
+
+Tab1:Toggle("挥拳无间隔", false, function(Value)
+noCD = Value
+		if noCD then
+			game:GetService("Players").LocalPlayer.Backpack.Punch:FindFirstChildOfClass("NumberValue").Value = 0
+		else
+			game:GetService("Players").LocalPlayer.Backpack.Punch:FindFirstChildOfClass("NumberValue").Value = punchCooldown
+		end
+end)
+
+rebirth = false
+
+Tab1:Toggle("自动重生", false, function(Value)
+rebirth = Value
+		spawn(function()
+			while rebirth do
+				wait(0.1)
+				game:GetService("ReplicatedStorage").rEvents.rebirthRemote:InvokeServer("rebirthRequest")
+			end
+		end)
+end)
+
+farming = false
+
+Tab1:Toggle("自动锻炼", false, function(Value)
+local part = Instance.new('Part', workspace)
+part.Size = Vector3.new(500, 20, 530.1)
+part.Position = Vector3.new(0, 1000, 133.15)
+part.CanCollide = true
+part.Anchored = true
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame + Vector3.new(0, 15, 0)
+
+local a = true
+local rs = game:GetService("RunService").RenderStepped
+if a == true then
+while rs:wait() do
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+if v.ClassName == "Tool" and v.Name == "Weight" then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+end
+end
+
+end)
+
+local Tab1 = Window:Tab("自动")
+
+autopunch = false
+
+Tab1:Toggle("自动挥拳", false, function(Value)
+autopunch = Value
+		game:GetService("RunService").Stepped:connect(
+		function()
+			pcall(
+				function()
+					if autopunch then
+						game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+						game:GetService("Players").LocalPlayer.muscleEvent:FireServer("punch", "leftHand")
+						game:GetService("Players").LocalPlayer.muscleEvent:FireServer("punch", "rightHand")
+						if autopunch then
+							game.Players.LocalPlayer.Character.Humanoid:EquipTool(
+								game:GetService("Players").LocalPlayer.Backpack.Punch
+							)
+						end
+					end
+
+				end
+			)
+		end
+		)
+end)
+
+br = false
+
+Tab1:Toggle("刷业报和自动挥拳一起才有效果", false, function(Value)
+br = Value
+		while br do
+			local randomPlayer = game.Players:GetPlayers()[math.random(1, #game.Players:GetPlayers())]
+			wait(0.2)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+				CFrame.new(
+					Vector3.new(
+						randomPlayer.Character.Head.Position.X,
+						randomPlayer.Character.Head.Position.Y,
+						randomPlayer.Character.Head.Position.Z
+					)
+				)
+		end
+end)
+
+ 
 local Tab1 = Window:Tab("传送")
 
-Tab1:Button("城市", function()
-    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-537.8, 4.2, 386.2)
+Tab1:Button("肌肉房", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8625.9296875, 13.566278457641602, -5730.4736328125)
 end)
 
-Tab1:Button("白雪城", function()
-    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-866.4, 4.2, 2165.7)
+Tab1:Button("传奇房", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4603.28173828125, 987.869140625, -3897.86572265625)
 end)
 
-Tab1:Button("溶岩城", function()
-    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1616.8, 4.3, 4330.7)
-end)
-Tab1:Button("传奇公路", function()
-    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3678.6, 71.7, 5592.4)
+Tab1:Button("永恒房", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6758.9638671875, 3.71626353263855, -1284.918701171875)
 end)
 
-local Tab2 = Window:Tab("自动")
-
-
-autoXP = false
-
-Tab2:Toggle("自动经验", false, function(Value)
-autoXP = Value
-		while autoXP do
-			game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Orange Orb", "City")
-			wait()
-		end
+Tab1:Button("神话房", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2250.778076171875, 3.716248035430908, 1073.2266845703125)
 end)
 
-autoHoop = false
-
-Tab2:Toggle("自动跳圈", false, function(Value)
-autoHoop = Value
-		spawn(function()
-			while autoHoop do
-				for i, v in pairs(game:GetService("Workspace").Hoops:GetChildren()) do
-					firetouchinterest(v, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 0)
-					wait()
-					firetouchinterest(v, game:GetService("Players").LocalPlayer.Character.HumanoidRootPart, 1)
-				end
-			end
-		end)  
+Tab1:Button("冰霜房", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2623.022216796875, 3.716249465942383, -409.0733337402344)
 end)
 
-autoRebirth = false
-
-Tab2:Toggle("自动重生", false, function(Value)
-autoRebirth = Value
-		while autoRebirth do
-			game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer("rebirthRequest")
-			wait(10)
-		end
+Tab1:Button("小岛", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-37.636775970458984, 3.86960768699646, 1879.180908203125)
 end)
 
-Tab2:Toggle("自动钻石", false, function(Value)
-autoCrystal = Value
-		while autoCrystal do
-			game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer("collectOrb", "Gem", "City")
-			wait()
-		end
+Tab1:Button("沙滩", function()
+    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-42.7, 3.7, 404.2)
 end)
 
-local Tab3 = Window:Tab("自动抽蛋")
 
-Tab3:Dropdown("挑选宠物水晶","Yellow Crystal",{"Yellow Crystal", "Blue Crystal", "Red Crystal", "Lightning Crystal", "Inferno Crystal", "Lava Crystal", "Snow Crystal", "Electro Legends Crystal", "Space Crystal", "Alien Crystal", "Electro Crystal", "Desert Crystal"},function(Value)
-	getgenv().Egg = Value
-end)
-    
-Tab3:Toggle("自动抽宠物", false, function(Value)
-function Egg()
-                while getgenv().AutoEgg == true do
-                    game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer("openCrystal", getgenv().Egg)
-                    wait()
-                end
-            end
-            
-            getgenv().AutoEgg = Value
-            Egg()
-	end)
