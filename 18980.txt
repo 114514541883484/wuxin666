@@ -1,0 +1,7 @@
+while true do
+if game.Players.LocalPlayer.leaderstats.Rebirths.Value == 18980 then
+break
+end
+game:GetService("ReplicatedStorage").rEvents.rebirthRemote:InvokeServer("rebirthRequest")
+task.wait(.5)
+end
